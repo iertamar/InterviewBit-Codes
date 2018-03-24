@@ -1,0 +1,29 @@
+public class Solution {
+    private boolean isPalindrome(String s){
+        StringBuilder copy = new StringBuilder(s);
+        StringBuilder reverse = new StringBuilder();
+        reverse = copy.reverse();
+        if(s.equals(reverse.toString())){
+            return true;
+        }
+        return false;
+    }
+    public int solve(String s) {
+       int count = 0;
+       int flag = 0;
+        while(s.length()>0)
+        {
+            if(isPalindrome(s))
+            {
+                flag = 1;
+                break ;
+            }
+            else
+            {
+                count++ ;
+                s = s.substring(0 , s.length()-1);
+            }
+        }
+        return count ;
+    }
+}
